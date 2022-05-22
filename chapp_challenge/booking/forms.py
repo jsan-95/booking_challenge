@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime, date
 
 from django.forms import EmailInput, ModelForm
 
@@ -70,9 +70,16 @@ class BookingDatesForm(ModelForm):
                 self._errors['check_out'] = self.error_class([
                     'La fecha de salida debe ser posterior a la fecha de '
                     'entrada'])
-            if check_in < datetime.date.today():
+            if check_in < date.today():
                 self._errors['check_out'] = self.error_class([
                     'La fecha de entrada debe ser posterior a hoy'])
+
+            last_day_of_current_year = date(date.today().year, 12, 31)
+
+
+            if check_out > last_day_of_current_year:
+                self._errors['check_out'] = self.error_class([
+                    'La fecha de salida debe ser antes de fin de año'])
 
         return cleaned_data
 
