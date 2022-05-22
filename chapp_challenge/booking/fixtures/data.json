@@ -1,0 +1,42 @@
+[
+  {
+    "model": "booking.room",
+    "pk": 1,
+    "fields": {
+      "name": "Individual",
+      "price": 20,
+      "max_guests": 1,
+      "max_availability": 10
+    }
+  },
+  {
+    "model": "booking.room",
+    "pk": 2,
+    "fields": {
+      "name": "Doble",
+      "price": 30,
+      "max_guests": 2,
+      "max_availability": 5
+    }
+  },
+  {
+    "model": "booking.room",
+    "pk": 3,
+    "fields": {
+      "name": "Triple",
+      "price": 40,
+      "max_guests": 3,
+      "max_availability": 4
+    }
+  },
+  {
+    "model": "booking.room",
+    "pk": 4,
+    "fields": {
+      "name": "Cuádruple",
+      "price": 50,
+      "max_guests": 4,
+      "max_availability": 6
+    }
+  }
+]
